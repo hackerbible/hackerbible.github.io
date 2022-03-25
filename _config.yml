@@ -1,1 +1,16 @@
-theme: jekyll-theme-minimal
+---
+title: HackerBible
+
+exclude: ['/scripts', '/Gemfile', '/Makefile', '/README.md']
+
+permalink: pretty
+
+collections:
+  hackerbible:
+    output: true
+
+defaults:
+  - scope:
+      path: '_hackerbible'
+    values:
+      layout: bin
