@@ -42,7 +42,7 @@
 
 </div>
 <div style="margin-top: -20px;">
-<input id="bin-search" type="text" placeholder="Search among {{ site.hackerbible | size }} commands: <command> +<filter> ..."/>
+<input id="bin-search" type="text" placeholder="Search among {{ site.oneliners | size }} commands: <command> +<filter> ..."/>
 </div>
 
 <div id="bin-table-wrapper">
@@ -53,7 +53,7 @@
             </tr>
         </thead>
         <tbody>
-	    {% assign sites = site.hackerbible | reverse %} 
+	    {% assign sites = site.oneliners | reverse %} 
             {% for file in sites %}
             <tr>
 		    <td><div class="bin-name"><div style="flex: 0 0 97%"><a href="{{ file.url }}" id="{{ file.url }}" style="text-decoration: none; color: DarkGreen;">{{ file.command | escape }}</a></div><div style="flex: 1;"><a href="javascript:void(0)" onClick="copyFunction('{{ file.url }}')"><img src="/assets/copy-button.svg" alt="Copy" title="Copy" id="{{ file.url }}_img"/></a></div></div><p style="margin-top: -12px;">{% include filter_list.html bin=file %}</p></td>
@@ -61,7 +61,7 @@
             {% endfor %}
         </tbody>
         <tfoot>
-		<!-- <tr><td id="search-message" colspan="2">Couldn't find the command you're looking for? <a href="/contribute/">Contribute</a> your own!</td></tr> -->
+		<tr><td id="search-message" colspan="2">Couldn't find the command you're looking for? <a href="/contribute/">Contribute</a> your own!</td></tr>
         </tfoot>
     </table>
 </div>
@@ -72,7 +72,7 @@
 	 var copyCommand = document.getElementById(file_url);
 
 	 navigator.clipboard.writeText(copyCommand.innerText).then(() => {
-		 {% for file in site.hackerbible %}
+		 {% for file in site.oneliners %}
 		 document.getElementById("{{ file.url }}_img").alt = "Copy";
 		 document.getElementById("{{ file.url }}_img").title = "Copy";
 		 {% endfor %}
@@ -127,15 +127,18 @@
 	     allFilters_parsed.push(f.id.toLowerCase());
      });
      var filter_chosen = functionPatterns.filter(element => allFilters_parsed.includes(element));
-     allItems.forEach((i) => {
+     
+	 allItems.forEach((i) => {
 	     allItems_parsed.push(i.id.toLowerCase());
      });
      var item_chosen = functionPatterns.filter(element => allItems_parsed.includes(element));
-     allAttacks.forEach((a) => {
+     
+	 allAttacks.forEach((a) => {
 	     allAttacks_parsed.push(a.id.toLowerCase());
      });
      var attack_chosen = functionPatterns.filter(element => allAttacks_parsed.includes(element));
-     allOS.forEach((o) => {
+     
+	 allOS.forEach((o) => {
 	     allOS_parsed.push(o.id.toLowerCase());
      });
      var os_chosen = functionPatterns.filter(element => allOS_parsed.includes(element));
@@ -182,7 +185,7 @@
 			     }
 
 			     if (item.innerText.toLowerCase().startsWith(p.toLowerCase())) {
-				     item.className = 'match';
+				     item.className = 'match'; // dit gaat nog goed, matcht met command 
 			     }
 		     });
 
@@ -192,7 +195,7 @@
          }
 	 var filled = true;
 	 var found_binName = false;
-         if (binName.indexOf(binPattern) !== -1 && binPattern.length !== 0) {
+     if (binName.indexOf(binPattern) !== -1 && binPattern.length !== 0) {
 		 found_binName = true;
 	 }
 
@@ -208,6 +211,20 @@
 	     {% endfor %}
 	 });
 
+	 // Items
+	 var found_item = -1;
+	 if (item_chosen.length !== 0) {
+		 found_item = 0;
+		 item_chosen.forEach((f) => {
+			 functionElems.forEach((i) => {
+				 if (i.innerText.toLowerCase() == f) {
+					 found_item = found_item + 1;
+				 }
+			 });
+		 });
+	 }
+
+	// Services
 	 var found_filter = -1;
 	 if (filter_chosen.length !== 0) {
 		 found_filter = 0;
@@ -220,6 +237,7 @@
 		 });
 	 }
 
+	// Attack type
 	 var found_attack = -1;
 	 if (attack_chosen.length !== 0) {
 		 found_attack = 0;
@@ -231,7 +249,8 @@
 			 });
 		 });
 	 }
-					 
+	
+	// OS
 	 var found_os = -1;
 	 if (os_chosen.length !== 0) {
 		 found_os = 0;
@@ -244,7 +263,12 @@
 		 });
 	 }
 
-	 if ((!filled && (found_attack < 1 && found_filter < 1 && found_os < 1 && !found_binName)) || (found_attack == 0 || found_filter == 0 || found_os == 0) || (!filled && item_chosen.length !== 0) || ((found_attack !== attack_chosen.length && found_attack !== -1) || (found_filter !== filter_chosen.length && found_filter !== -1) || (found_os !== os_chosen.length && found_os !== -1)) || (binPattern.length !== 0 && !found_binName)) {
+	 if ((!filled && (found_attack < 1 && found_filter < 1 && found_os < 1 && found_item < 1 && !found_binName)) || 
+	 	 (found_attack == 0 || found_filter == 0 || found_os == 0 || found_item == 0) || 
+		//  (!filled && item_chosen.length !== 0) || 
+		// Dit was de 'bug'.
+		 ((found_item !== item_chosen.length && found_item !== -1 ) || (found_attack !== attack_chosen.length && found_attack !== -1) || (found_filter !== filter_chosen.length && found_filter !== -1) || (found_os !== os_chosen.length && found_os !== -1)) || 
+		 (binPattern.length !== 0 && !found_binName)) {
 		row.style.display = 'none';
 	 } else {
 	    	row.style.display = '';

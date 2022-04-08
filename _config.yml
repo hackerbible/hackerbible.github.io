@@ -6,11 +6,11 @@ exclude: ['/scripts', '/Gemfile', '/Makefile', '/README.md']
 permalink: pretty
 
 collections:
-  hackerbible:
+  oneliners:
     output: true
 
 defaults:
   - scope:
-      path: '_hackerbible'
+      path: '_oneliners'
     values:
       layout: bin
