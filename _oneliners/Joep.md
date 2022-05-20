@@ -1,12 +1,12 @@
 ---
 title: |
-  Hack every user on the network
+  Steal everyone's password
 
 description: |
-  Test Jelle
+  Test Joep
 
 command: |
-  python3 jelle.py
+  python3 joep.py
 
 items:
   - Username

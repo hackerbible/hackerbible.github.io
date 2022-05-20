@@ -1,4 +1,4 @@
-<h1>
+<h1 style="color: #F05025">
     {% if page.url != '/' %}
     <a href="/">..</a> /
     {% endif %}
@@ -12,6 +12,10 @@
             if(localStorage["style"]=="true"){
                 document.getElementById('pagestyle').setAttribute('href','/assets/styleDark.css');
                 document.querySelector('input[type="checkbox"]').checked = true
+            } else if(localStorage["style"] == null) {
+                document.getElementById('pagestyle').setAttribute('href','/assets/styleDark.css');
+                document.querySelector('input[type="checkbox"]').checked = true
+                localStorage.setItem('style', 'true');
             }
         </script>
     </div>
