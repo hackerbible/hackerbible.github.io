@@ -13,7 +13,7 @@ items:
 services:
   - SMB
 OS:
-  - Linux
+  - Windows
 attack_types:
   - Enumeration
 references:
