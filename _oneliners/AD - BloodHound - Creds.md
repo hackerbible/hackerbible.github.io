@@ -7,10 +7,10 @@ description: |
 
   Command Reference:
 
-  	Target IP: 10.10.10.1
+    Target IP: 10.10.10.1
     Username: test
     Password: Welkom01!
-  	Domain: test.local
+    Domain: test.local
     
 command: |
   bloodhound-python -u test -p Welkom01 -ns 10.10.10.1 -d test.local -c All
