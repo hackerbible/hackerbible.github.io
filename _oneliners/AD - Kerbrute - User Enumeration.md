@@ -8,9 +8,9 @@ description: |
 
   	DC IP: 10.10.10.1
 
-    Domain: test.local
+    Username List: usernames.txt
 
-  	Username List: usernames.txt
+  	Domain: test.local
 
 command: |
   kerbrute userenum --dc 10.10.10.1 -d test.local usernames.txt

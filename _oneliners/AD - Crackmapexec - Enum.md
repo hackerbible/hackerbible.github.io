@@ -8,10 +8,10 @@ description: |
 
   	Target IP: 10.10.10.1
 
-  	Username: test
+    Username: test
 
-  	Password: Welkom01!
-    
+    Password: Welkom01!
+
 command: |
   crackmapexec smb 10.10.10.1 -u 'test' -p 'Welkom01!' --groups --local-groups --loggedon-users --rid-brute --sessions --users --shares --pass-pol
 items:

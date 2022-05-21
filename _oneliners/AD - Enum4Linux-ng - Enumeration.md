@@ -7,7 +7,7 @@ description: |
   Command Reference:
 
   	Target IP: 10.10.10.1
-    
+
 command: |
   enum4linux-ng -A 10.10.10.1
 items:

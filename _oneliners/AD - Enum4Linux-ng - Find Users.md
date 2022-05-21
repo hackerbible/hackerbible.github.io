@@ -6,12 +6,8 @@ description: |
 
   Command Reference:
 
-  	DC IP: 10.10.10.1
+  	Target IP: 10.10.10.1
 
-  	Username: john
-
-  	Password: password123
-    
 command: |
   enum4linux-ng -U 10.10.10.1 | grep 'user:'
 items:
