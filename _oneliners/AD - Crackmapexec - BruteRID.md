@@ -6,13 +6,11 @@ description: |
 
   Command Reference:
 
-    DC IP: 10.10.10.1
-    
-    Username: test
-    
-    Password: Welkom01!
-    
-    Domain: test.local
+  	DC IP: 10.10.10.1
+
+  	Username: test
+
+  	Password: Welkom01!
 
 command: |
   crackmapexec smb 10.10.10.1 -u test -p Welkom01! --rid-brute

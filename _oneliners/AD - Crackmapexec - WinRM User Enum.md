@@ -6,11 +6,11 @@ description: |
 
   Command Reference:
 
-    Target IP: 10.10.10.1
-    
-    Usersfile: users.txt
-    
-    Password: Welkom01!
+  	Target IP: 10.10.10.1
+
+  	Users File: users.txt
+
+  	Password: Welkom01!
 
 command: |
   crackmapexec winrm 10.10.10.1 -u users.txt -p 'Welkom01' --continue-on-success

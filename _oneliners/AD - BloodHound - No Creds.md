@@ -7,9 +7,9 @@ description: |
 
   Command Reference:
 
-    Target IP: 10.10.10.1
-    
-    Domain: test.local
+  	Target IP: 10.10.10.1
+
+  	Domain: test.local
 
 command: |
   bloodhound-python -d test.local -ns 10.10.10.1 -c All

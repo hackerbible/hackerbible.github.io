@@ -6,11 +6,11 @@ description: |
 
   Command Reference:
 
-    DC IP: 10.10.10.1
-    
-    Username List: usernames.txt
-    
-    Domain: test.local
+  	DC IP: 10.10.10.1
+
+  	Domain: test.local
+
+  	Users List: usernames.txt
 
 command: |
   kerbrute userenum --dc 10.10.10.1 -d test.local usernames.txt
