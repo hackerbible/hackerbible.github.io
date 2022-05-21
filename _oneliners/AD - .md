@@ -1,19 +1,17 @@
 ---
 title: |
-  Steal everyone's password
+  Collect data for Bloodhound.
 
 description: |
-  Test Joep
+  Data collection with SharpHound.
 
 command: |
-  python3 joep.py
+  SharpHound.exe -c All
 
 items:
-  - Username
-services:
-  - SMB
+  - Shell
 OS:
-  - Linux
+  - Windows
 attack_types:
   - Enumeration
 references:
