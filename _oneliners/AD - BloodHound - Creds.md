@@ -9,9 +9,9 @@ description: |
 
   	Target IP: 10.10.10.1
 
-  	Username: test
+    Username: test
 
-  	Password: Welkom01!
+    Password: Welkom01!
 
   	Domain: test.local
     
