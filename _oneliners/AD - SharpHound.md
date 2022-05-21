@@ -3,7 +3,7 @@ title: |
   Collect data for Bloodhound with SharpHound
 description: |
   Using SharpHound to collect data for analysis with BloodHound.
-command: |
+**command**: |
   SharpHound.exe -c All
 items:
   - Shell
