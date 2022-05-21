@@ -1,7 +1,6 @@
 ---
 title: |
-  Find Users with enum4linux-ng
-
+  Find Users with Enum4Linux-ng
 description: |
   enum4linux-ng.py is a rewrite of Mark Lowe's (former Portcullis Labs now Cisco CX Security Labs) enum4linux.pl, a tool for enumerating information from Windows and Samba systems, aimed for security professionals and CTF players. The tool is mainly a wrapper around the Samba tools nmblookup, net, rpcclient and smbclient.
 
@@ -9,7 +8,6 @@ description: |
   	DC IP: 10.10.10.1
   	Username: john
   	Password: password123
-
 command: |
   enum4linux-ng -U 10.10.10.1 | grep 'user:'
 items:
@@ -19,5 +17,5 @@ attack_types:
 OS:
   - Linux
 references:
-  - https://github.com/CiscoCXSecurity/enum4linux
+  - https://github.com/cddmp/enum4linux-ng
 ---
