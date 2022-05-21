@@ -8,7 +8,7 @@ description: |
 
   	DC IP: 10.10.10.1
 
-    Username List: usernames.txt
+  	Username List: usernames.txt
 
   	Domain: test.local
 
