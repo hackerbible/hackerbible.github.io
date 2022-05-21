@@ -7,7 +7,9 @@ description: |
   Command Reference:
 
     Target IP: 10.10.10.1
+    
     Usersfile: users.txt
+    
     Password: Welkom01!
 
 command: |

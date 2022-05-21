@@ -7,7 +7,9 @@ description: |
   Command Reference:
 
     DC IP: 10.10.10.1
+    
     Username List: usernames.txt
+    
     Domain: test.local
 
 command: |
