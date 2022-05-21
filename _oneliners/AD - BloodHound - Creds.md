@@ -15,7 +15,7 @@ description: |
 
   	Domain: test.local
 
-command: |
+__command__: |
   bloodhound-python -u test -p Welkom01 -ns 10.10.10.1 -d test.local -c All
 items:
   - Username
