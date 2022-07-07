@@ -12,5 +12,5 @@ OS:
 attack_types:
   - Enumeration
 references:
-  - https://onvio.nl
+  - https://github.com/BloodHoundAD/BloodHound
 ---
