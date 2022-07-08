@@ -19,9 +19,9 @@ description: Description of what the command does.
 
   	Domain: test.local
 
-  	Username: john
+  	Username: test
 
-  	Password: password123
+  	Password: Welkom01!
 
 command: |
   put command here
