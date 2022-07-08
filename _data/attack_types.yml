@@ -1,7 +1,7 @@
 ---
 Scanning:
   label: Scanning
-  description: Command focuses on Scanning
+  description: Command focuses on scanning.
  
 Enumeration:
   label: Enumeration
@@ -18,3 +18,7 @@ Persistence:
 PrivEsc:
   label: Privilege Escalation
   description: Command focuses on privilege escalation.
+
+Cracking:
+  label: Cracking
+  description: Command focuses on cracking.
